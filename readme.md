@@ -40,6 +40,12 @@ With the supported styles being
 
 Values in the resources are not case-sensitive, and their comparing integers are static in the Typeface class (e.g. Typeface.BOLD or Typeface.ITALICS).
 
+Now, we need to ensure we have a default FontFamily correctly set by overring *R.string.fu__default_font_family*:
+
+```xml
+<string name="fu__default_font_family">roboto</string>
+```
+
 Next, we have 3 choices for how to use this font. We can either
 
 ###### Use the already-overridden classes for you
@@ -47,9 +53,11 @@ Next, we have 3 choices for how to use this font. We can either
 ```xml
 <com.guardanis.fontutils.TextView 
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:textFontFamily="roboto" />
+    app:textFontFamily="roboto"
+    android:textStyle="bold" />
 
 ```
+
 These convenience helper classes include
 * com.guardanis.fontutils.TextView
 * com.guardanis.fontutils.Button
@@ -69,8 +77,9 @@ FontUtils.getInstance(getContext())
 ###### Manually call one of the FontUntils' helper methods to set the font programmatically
 
 ```java
+TextView view = (TextView) findViewById(R.id.some_id);
 FontUtils.getInstance(getContext())
-                .setTypeface(this, fontFamily, style);
+                .setTypeface(view, fontFamily, style);
 ```
 
 ### ToDos and Notes
