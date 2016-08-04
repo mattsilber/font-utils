@@ -76,7 +76,8 @@ public class EditText extends android.widget.EditText {
         @Override
         public boolean deleteSurroundingText(int beforeLength, int afterLength) {
             if(beforeLength == 1 && afterLength == 0)
-                return sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DEL)) && sendKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_DEL));
+                return sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DEL))
+                        && sendKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_DEL));
 
             return super.deleteSurroundingText(beforeLength, afterLength);
         }

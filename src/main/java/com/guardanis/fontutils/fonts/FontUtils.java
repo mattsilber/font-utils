@@ -97,7 +97,8 @@ public class FontUtils {
 
             int textSize = a.getInt(R.styleable.FontUtils_textSizePercent, -1);
             if(0 < textSize)
-                view.setTextSize(TypedValue.COMPLEX_UNIT_PX, view.getResources().getDisplayMetrics().widthPixels * (textSize / 100f));
+                view.setTextSize(TypedValue.COMPLEX_UNIT_PX,
+                        view.getResources().getDisplayMetrics().widthPixels * (textSize / 100f));
 
             a.recycle();
         }
@@ -112,7 +113,7 @@ public class FontUtils {
     }
 
     public void setTypeface(TextView view, int fontFamilyResId, int style){
-        setTypeface(view, fontFamilyResId, style);
+        setTypeface(view, view.getContext().getString(fontFamilyResId), style);
     }
 
     public void setTypeface(TextView view, String fontFamily, int style){
