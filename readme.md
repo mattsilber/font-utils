@@ -1,5 +1,8 @@
 # font-utils
 
+[![Download](https://api.bintray.com/packages/mattsilber/maven/font-utils/images/download.svg) ](https://bintray.com/mattsilber/maven/font-utils/_latestVersion)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-font--utils-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/4049)
+
 The goal of this library is to allow your app to support multiple FontFamilies (e.g. lato, roboto, etc.) with their own styles (e.g. normal, bold, italic) in an easily-configurable way.  
 
 
