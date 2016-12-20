@@ -48,7 +48,7 @@ ext {
     artifact = 'font-utils'
 
     libraryDescription = 'A library to help with custom fonts and text sizes'
-    libraryVersion = '1.0.1'
+    libraryVersion = '1.0.2'
 
     developerId = 'mattsilber'
     developerName = 'Matt Silber'

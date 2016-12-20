@@ -34,7 +34,8 @@ public class FontUtils {
         for(String family : context.getResources().getStringArray(R.array.fu__font_family_resources)){
             String[] pair = family.split("--");
 
-            fontFamilies.put(pair[0], new FontFamily(context.getAssets(), pair[1]));
+            fontFamilies.put(pair[0],
+                    new FontFamily(context.getAssets(), pair[1]));
         }
     }
 
@@ -88,6 +89,7 @@ public class FontUtils {
                     .obtainStyledAttributes(attrs, R.styleable.FontUtils, defStyle, 0);
 
             fontFamily = a.getString(R.styleable.FontUtils_textFontFamily);
+
             if(fontFamily == null || fontFamily.length() < 1)
                 fontFamily = defaultFontFamily;
 

@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    compile('com.guardanis:font-utils:1.0.1')
+    compile('com.guardanis:font-utils:1.0.2')
 }
 ```
 
