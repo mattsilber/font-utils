@@ -15,8 +15,7 @@ public class FontFamily {
             String[] pair = params.split("=");
 
             try{
-                typefaces.put(getStyle(pair[0]),
-                        Typeface.createFromAsset(assets, pair[1]));
+                typefaces.put(getStyle(pair[0]), Typeface.createFromAsset(assets, pair[1]));
             }
             catch(RuntimeException e){ e.printStackTrace(); }
         }
@@ -28,14 +27,24 @@ public class FontFamily {
     private int getStyle(String value){
         value = value.toLowerCase(Locale.US);
 
-        if(value.equals("normal"))
-            return Typeface.NORMAL;
-        else if(value.equals("bold"))
-            return Typeface.BOLD;
-        else if(value.equals("italic"))
-            return Typeface.ITALIC;
-        else if(value.equals("bold_italic"))
-            return Typeface.BOLD_ITALIC;
+        switch (value) {
+            case "normal":
+                return Typeface.NORMAL;
+            case "bold":
+                return Typeface.BOLD;
+            case "italic":
+                return Typeface.ITALIC;
+            case "bold_italic":
+                return Typeface.BOLD_ITALIC;
+            default:
+                break;
+        }
+
+        try {
+            // For custom variations of a font without creating a new family
+            return Integer.parseInt(value);
+        }
+        catch (Exception e) { }
 
         throw new RuntimeException("Unsupported font identifier: " + value);
     }
@@ -46,7 +55,7 @@ public class FontFamily {
     public Typeface get(int style){
         if(typefaces.get(style) == null)
             return typefaces.get(Typeface.NORMAL);
-        else return typefaces.get(style);
-    }
 
+        return typefaces.get(style);
+    }
 }

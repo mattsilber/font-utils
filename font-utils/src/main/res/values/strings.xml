@@ -4,7 +4,6 @@
         <item>roboto--normal=fonts/roboto.ttf,bold=fonts/roboto_bold.ttf</item>
     </string-array>
 
-
     <string name="fu__default_font_family">roboto</string>
 
 </resources>

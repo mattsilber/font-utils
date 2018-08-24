@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg"
+    android:orientation="vertical"
+    android:padding="24dp"
+    tools:context=".MainActivity">
+
+    <com.guardanis.fontutils.TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This is some kind of title"
+        android:textColor="@color/base__text_white_0"
+        android:textSize="24dp"
+        app:textFontFamily="@string/font_family__raph" />
+
+    <com.guardanis.fontutils.TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Source: http://www.fontspace.com/alit-design/raph-lanok-future"
+        android:textColor="@color/base__text_white_1"
+        android:textSize="12dp" />
+
+    <com.guardanis.fontutils.TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="This is a title"
+        android:textColor="@color/base__text_white_1"
+        android:textSize="24dp"
+        app:textFontFamily="@string/font_family__betrayal" />
+
+    <com.guardanis.fontutils.TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Source: http://www.fontspace.com/chequered-ink/betrayal-of-mind"
+        android:textColor="@color/base__text_white_1"
+        android:textSize="12dp" />
+
+    <TextView
+        android:id="@+id/main__text_replacement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="This is a title"
+        android:textColor="@color/base__text_white_1"
+        android:textSize="24dp" />
+
+    <com.guardanis.fontutils.TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Source: http://www.fontspace.com/chequered-ink/float-the-boat"
+        android:textColor="@color/base__text_white_1"
+        android:textSize="12dp" />
+
+</LinearLayout>

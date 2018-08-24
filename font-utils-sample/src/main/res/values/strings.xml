@@ -1,0 +1,19 @@
+<resources>
+
+    <string name="app_name">Font-Utils Sample</string>
+
+    <string-array name="fu__font_family_resources">
+        <item>roboto--normal=fonts/roboto.ttf,bold=fonts/roboto_bold.ttf</item>
+        <item>raph--normal=fonts/raph_lanok_future.ttf</item>
+        <item>betrayal--normal=fonts/betrayal_of_mind.ttf</item>
+        <item>hybrid--normal=fonts/roboto.ttf,bold=fonts/float_the_boat.ttf,3337=fonts/float_the_boat.ttf</item>
+    </string-array>
+
+    <string name="fu__default_font_family">roboto</string>
+
+    <string name="font_family__roboto">roboto</string>
+    <string name="font_family__raph">raph</string>
+    <string name="font_family__betrayal">betrayal</string>
+    <string name="font_family__hybrid">hybrid</string>
+
+</resources>

@@ -22,7 +22,7 @@ public class FontUtils {
         return instance;
     }
 
-    private static final String RES_AUTO = "http://schemas.android.com/apk/res/android";
+    private static final String RES_ANDROID = "http://schemas.android.com/apk/res/android";
 
     private HashMap<String, FontFamily> fontFamilies = new HashMap<String, FontFamily>();
 
@@ -34,8 +34,7 @@ public class FontUtils {
         for(String family : context.getResources().getStringArray(R.array.fu__font_family_resources)){
             String[] pair = family.split("--");
 
-            fontFamilies.put(pair[0],
-                    new FontFamily(context.getAssets(), pair[1]));
+            fontFamilies.put(pair[0], new FontFamily(context.getAssets(), pair[1]));
         }
     }
 
@@ -93,14 +92,18 @@ public class FontUtils {
             if(fontFamily == null || fontFamily.length() < 1)
                 fontFamily = defaultFontFamily;
 
-            int style = attrs.getAttributeIntValue(RES_AUTO, "textStyle", Typeface.NORMAL);
+            int style = attrs.getAttributeIntValue(RES_ANDROID, "textStyle", Typeface.NORMAL);
+            Typeface typeface = getTypeface(fontFamily, style);
 
-            view.setTypeface(getTypeface(fontFamily, style));
+            view.setTypeface(typeface);
 
             int textSize = a.getInt(R.styleable.FontUtils_textSizePercent, -1);
-            if(0 < textSize)
-                view.setTextSize(TypedValue.COMPLEX_UNIT_PX,
-                        view.getResources().getDisplayMetrics().widthPixels * (textSize / 100f));
+
+            if(0 < textSize) {
+                float size = view.getResources().getDisplayMetrics().widthPixels * (textSize / 100f);
+
+                view.setTextSize(TypedValue.COMPLEX_UNIT_PX, size);
+            }
 
             a.recycle();
         }
@@ -121,5 +124,4 @@ public class FontUtils {
     public void setTypeface(TextView view, String fontFamily, int style){
         view.setTypeface(getTypeface(fontFamily, style));
     }
-
 }

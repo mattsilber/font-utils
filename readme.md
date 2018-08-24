@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    compile('com.guardanis:font-utils:1.0.2')
+    compile('com.guardanis:font-utils:1.0.3')
 }
 ```
 
@@ -42,6 +42,15 @@ With the supported styles being
 * BOLD_ITALICS
 
 Values in the resources are not case-sensitive, and their comparing integers are static in the Typeface class (e.g. Typeface.BOLD or Typeface.ITALICS).
+
+You can also use additional custom typeface style variants by assigning them an integer value, instead of using one of the accepted Typeface values:
+
+```xml
+<string-array name="fu__font_family_resources">
+    <item>roboto--normal=fonts/robo.ttf,123456=fonts/robo_bold.ttf</item>
+</string-array>
+
+```
 
 Now, we need to ensure we have a default FontFamily correctly set by overring *R.string.fu__default_font_family*:
 
@@ -74,7 +83,7 @@ Call the following from your custom TextView (or TextView subclass)'s constructo
  
 ```java
 FontUtils.getInstance(getContext())
-                .load(this, attrs, defStyle);
+    .load(this, attrs, defStyle);
 
 ```
 ###### Manually call one of the FontUntils' helper methods to set the font programmatically
@@ -82,9 +91,9 @@ FontUtils.getInstance(getContext())
 ```java
 TextView view = (TextView) findViewById(R.id.some_id);
 FontUtils.getInstance(getContext())
-                .setTypeface(view, fontFamily, style);
+    .setTypeface(view, fontFamily, style);
 ```
 
-### ToDos and Notes
+### Notes
 * A NORMAL font is required for a typeface to be loaded. If the FontFamily is loaded without a normal font, it will throw a RuntimeException letting you know what went wrong.
 * Trying to load any non-normal font style that doesn't exist will default to the normal style.
