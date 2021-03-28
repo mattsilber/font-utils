@@ -1,6 +1,6 @@
 # font-utils
 
-[![Download](https://api.bintray.com/packages/mattsilber/maven/font-utils/images/download.svg) ](https://bintray.com/mattsilber/maven/font-utils/_latestVersion)
+[![Download](https://img.shields.io/maven-central/v/com.guardanis/font-utils)](https://search.maven.org/artifact/com.guardanis/font-utils)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-font--utils-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/4049)
 
 The goal of this library is to allow your app to support multiple FontFamilies (e.g. lato, roboto, etc.) with their own styles (e.g. normal, bold, italic) in an easily-configurable way.  
@@ -10,11 +10,11 @@ The goal of this library is to allow your app to support multiple FontFamilies (
 
 ```groovy
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 dependencies {
-    compile('com.guardanis:font-utils:1.0.3')
+    compile('com.guardanis:font-utils:1.0.4')
 }
 ```
 
@@ -97,3 +97,8 @@ FontUtils.getInstance(getContext())
 ### Notes
 * A NORMAL font is required for a typeface to be loaded. If the FontFamily is loaded without a normal font, it will throw a RuntimeException letting you know what went wrong.
 * Trying to load any non-normal font style that doesn't exist will default to the normal style.
+
+
+### Moved to MavenCentral
+
+As of version 1.0.4, font-utils will be hosted on MavenCentral. Versions 1.0.3 and below will remain on JCenter.
